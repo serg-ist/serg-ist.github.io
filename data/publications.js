@@ -42,6 +42,16 @@ window.PUBLICATIONS = [
     type: "Preprint"
   },
   {
+    year: 2024,
+    title: "Photometric search for short-period Jupiter-size exoplanets in open clusters NGC 884 and NGC 869",
+    authors: ["Javed Iqbal", "Shaukat Goderya", "Fazeel Mahmood Khan"],
+    journal: "Open European Journal on Variable Stars",
+    article: "0256",
+    doi: "10.5817/OEJV2024-0256",
+    pdf: "https://oejv.physics.muni.cz/issues/oejv_0256.pdf",
+    type: "Journal article"
+  },
+  {
     year: 2023,
     title: "Long-term photometric behavior and orbital period variations in the supersoft X-ray source V617 Sgr",
     authors: ["Lei Zang", "Ergang Zhao", "Eduardo Fernández-Lajús", "Ahmed Waqas Zubairi", "Nopphadon Sarotsakulchai"],
@@ -82,5 +92,71 @@ window.PUBLICATIONS = [
     doi: "10.1016/j.newast.2018.08.002",
     arxiv: "1808.06585",
     type: "Journal article"
+  }
+];
+
+/*
+  CONFERENCE PRESENTATIONS AND POSTERS
+  Shown in their own section on the Publications page, newest first.
+  The section stays hidden until this list has at least one entry.
+
+    year      Year of the conference (number, no quotes)
+    title     Title of the poster or talk
+    authors   Authors in order, as for papers
+    event     Conference or meeting name
+    location  City, country (or "Online")
+    date      Optional, e.g. "15–19 July 2025"
+    type      "Poster", "Oral talk" or "Invited talk"
+    pdf       Optional poster PDF, e.g. "assets/posters/iqbal-2025-poster.pdf"
+              (upload the PDF into assets/posters/ first)
+    url       Optional link to the conference page or abstract
+    links     Optional extra links: [ { text: "…", url: "…" } ]
+
+  Example (copy, remove the // at the start of each line, and edit):
+  // {
+  //   year: 2025,
+  //   title: "Flares on rapidly rotating M dwarfs in young open clusters",
+  //   authors: ["Javed Iqbal", "Ahmed Waqas Zubairi"],
+  //   event: "Name of the conference",
+  //   location: "Islamabad, Pakistan",
+  //   date: "15–19 July 2025",
+  //   type: "Poster",
+  //   pdf: "assets/posters/iqbal-2025-poster.pdf",
+  //   url: "https://conference-website"
+  // },
+*/
+window.PRESENTATIONS = [
+  {
+    year: 2026,
+    title: "AI-enabled open cluster membership analysis: integrating machine learning with Tarleton telescope data",
+    authors: ["Shaukat Goderya", "Javed Iqbal"],
+    event: "Texas A&M Artificial Intelligence Research and Innovation Meeting, Faculty AI Research Discovery Gallery",
+    date: "5–6 October 2026",
+    type: "Poster",
+    pdf: "assets/posters/goderya-iqbal-2026-ai-cluster-membership-poster.pdf"
+  },
+  {
+    year: 2024,
+    title: "Photometry and transit modelling of exoplanet TOI 2109b",
+    authors: ["Javed Iqbal", "Shaukat Goderya"],
+    event: "2024 Sagan Summer Workshop, NASA Exoplanet Science Institute",
+    location: "Caltech, Pasadena, United States",
+    date: "22–26 July 2024",
+    type: "Poster",
+    pdf: "assets/posters/iqbal-2024-sagan-toi2109b-poster.pdf",
+    url: "https://nexsci.caltech.edu/workshop/2024/",
+    links: [
+      { text: "Poster on the workshop website", url: "https://nexsci.caltech.edu/workshop/2024/posters/Poster_JavedIqbal_49.pdf" }
+    ]
+  },
+  {
+    year: 2024,
+    title: "Determination of the parameters of open clusters NGC 884 and NGC 869 using Gaia EDR3",
+    authors: ["Javed Iqbal", "Shaukat Goderya", "M. Yüksek"],
+    event: "International Conference on Relativistic Astrophysics and Cosmology (ICRAC-2024)",
+    location: "COMSATS University Islamabad, Lahore Campus, Pakistan",
+    date: "1–2 February 2024",
+    type: "Poster",
+    pdf: "assets/posters/iqbal-2024-icrac-ngc884-ngc869-gaia-poster.pdf"
   }
 ];

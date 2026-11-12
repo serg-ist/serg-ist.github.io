@@ -25,7 +25,7 @@ window.PEOPLE = {
     photo: "assets/img/people/ahmed-waqas-zubairi.jpg",
     email: "ahmed.zubairi@ist.edu.pk",
     bio: [
-      "Dr. Ahmed Waqas Zubairi is Assistant Professor in the Space Science Department at the Institute of Space Technology, Islamabad, where he leads the Variable Stars and Exoplanet Astrophysics Research Group. He received his PhD from Yunnan Astronomical Observatories, University of Chinese Academy of Sciences, China.",
+      "Dr. Ahmed Waqas Zubairi is Assistant Professor in the Space Science Department at the Institute of Space Technology, Islamabad, where he leads the Star and Exoplanet Research Group (SERG). He received his PhD from Yunnan Astronomical Observatories, University of Chinese Academy of Sciences, China.",
       "His research interests span photometric and spectroscopic data analysis of variable stars, with a particular focus on deep, low mass-ratio contact binaries.",
       "The group is extending this photometric expertise to transiting exoplanets, to flares on cool, magnetically active stars, and to machine learning for stellar cluster membership analysis."
     ],
@@ -57,10 +57,10 @@ window.PEOPLE = {
       name: "Ayesha Noor",
       role: "MS student",
       area: "Evolution of low mass-ratio contact binaries, using TESS light curves and PHOEBE modelling to derive their physical and orbital parameters.",
-      photo: ""
+      photo: "assets/img/people/ayesha-noor-placeholder.svg"
     },
     {
-      name: "Zainab Abbasi",
+      name: "Zainab",
       role: "MS student",
       area: "Orbital period changes in eclipsing binaries, traced with TESS eclipse timings and O–C diagrams to reveal mass transfer, magnetic braking or third bodies.",
       photo: "assets/img/people/zainab-abbasi.jpg"

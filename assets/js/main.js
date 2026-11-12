@@ -1,4 +1,4 @@
-/* Stellar and Exoplanet Astrophysics Research Group — site script.
+/* Star and Exoplanet Research Group (SERG) — site script.
    Content lives in the /data folder; this file only displays it.
    Members normally never need to edit this file. */
 (function () {
@@ -20,6 +20,7 @@
     ["research.html", "Research", "research"],
     ["people.html", "People", "people"],
     ["publications.html", "Publications", "publications"],
+    ["software.html", "Software", "software"],
     ["collaborations.html", "Collaborations", "collaborations"],
     ["opportunities.html", "Opportunities", "opportunities"],
     ["summer-school.html", "Summer Research School", "summer-school"],
@@ -436,7 +437,7 @@
     if (p.url && !p.doi) links.push('<a href="' + esc(p.url) + '" rel="noopener">Journal page</a>');
     if (p.ads) links.push('<a href="https://ui.adsabs.harvard.edu/abs/' + esc(p.ads) + '" rel="noopener">NASA ADS</a>');
     if (p.ssrn) links.push('<a href="https://ssrn.com/abstract=' + esc(p.ssrn) + '" rel="noopener">SSRN preprint</a>');
-    if (p.pdf) links.push('<a href="' + esc(p.pdf) + '" rel="noopener">PDF</a>');
+    if (p.pdf) links.push('<a href="' + esc(p.pdf) + '" rel="noopener">Free PDF</a>');
     return '<li class="pub"><h3>' + (url ? '<a href="' + esc(url) + '" rel="noopener">' + esc(p.title) + "</a>" : esc(p.title)) + "</h3>" +
       '<p class="pub-authors">' + authors + "</p>" +
       '<p class="pub-venue">' + venue + (p.type ? '<span class="pub-type">' + esc(p.type) + "</span>" : "") + "</p>" +
@@ -469,12 +470,65 @@
     draw("");
   }
 
+  function renderPresentations() {
+    var root = $("#talks-root");
+    if (!root) return;
+    var list = (window.PRESENTATIONS || []).slice().sort(function (a, b) { return (b.year || 0) - (a.year || 0); });
+    var section = root.closest("[data-hide-empty]");
+    if (!list.length) { if (section) section.hidden = true; return; }
+    var hl = S.highlightAuthors || [];
+    var years = [], byYear = {};
+    list.forEach(function (p) { if (!byYear[p.year]) { byYear[p.year] = []; years.push(p.year); } byYear[p.year].push(p); });
+    root.innerHTML = years.map(function (y) {
+      return '<section class="pub-year" aria-labelledby="talks-' + y + '"><h3 class="pub-year-label" id="talks-' + y + '">' + y + '</h3><ol class="pub-list">' +
+        byYear[y].map(function (p) {
+          var authors = (p.authors || []).map(function (n) {
+            var e = esc(n);
+            return hl.some(function (h) { return n.indexOf(h) !== -1; }) ? "<strong>" + e + "</strong>" : e;
+          }).join(", ");
+          var where = [p.event, p.location, p.date].filter(Boolean).map(esc).join(", ");
+          var links = [];
+          if (p.pdf) links.push('<a href="' + esc(p.pdf) + '" rel="noopener">' + (p.type === "Poster" ? "Poster (PDF)" : "Slides (PDF)") + "</a>");
+          if (p.url) links.push('<a href="' + esc(p.url) + '" rel="noopener">Conference page</a>');
+          (p.links || []).forEach(function (l) { links.push('<a href="' + esc(l.url) + '" rel="noopener">' + esc(l.text) + "</a>"); });
+          var main = p.pdf || p.url;
+          return '<li class="pub"><h3>' + (main ? '<a href="' + esc(main) + '" rel="noopener">' + esc(p.title) + "</a>" : esc(p.title)) + "</h3>" +
+            '<p class="pub-authors">' + authors + "</p>" +
+            '<p class="pub-venue">' + where + (p.type ? '<span class="pub-type">' + esc(p.type) + "</span>" : "") + "</p>" +
+            (links.length ? '<p class="pub-links">' + links.join("") + "</p>" : "") + "</li>";
+        }).join("") + "</ol></section>";
+    }).join("");
+  }
+
   function renderRecentPubs() {
     var el = $("#recent-pubs");
     if (!el) return;
     var list = sortedPubs().slice(0, 3);
     if (!list.length) { el.closest("section").hidden = true; return; }
     el.innerHTML = list.map(pubHTML).join("");
+  }
+
+  /* ---------- Software ---------- */
+  function renderSoftware() {
+    var el = $("#software-list");
+    if (!el) return;
+    var list = window.SOFTWARE || [];
+    if (!list.length) { el.outerHTML = '<p class="empty">Software will be listed here.</p>'; return; }
+    el.innerHTML = list.map(function (t) {
+      var shot = t.screenshot ? '<a class="sw-shot" href="' + esc(t.repo || t.screenshot) + '" rel="noopener"><img src="' + esc(t.screenshot) + '" alt="Screenshot of ' + esc(t.name) + '" loading="lazy"></a>' : "";
+      var facts = [];
+      if (t.stack) facts.push("<div><dt>Built with</dt><dd>" + esc(t.stack) + "</dd></div>");
+      if (t.license) facts.push("<div><dt>Licence</dt><dd>" + esc(t.license) + " (open source)</dd></div>");
+      if (t.developers && t.developers.length) facts.push("<div><dt>Developers</dt><dd>" + t.developers.map(esc).join(", ") + "</dd></div>");
+      return '<article class="sw' + (shot ? " has-shot" : "") + '">' + shot +
+        '<div class="sw-body"><h2>' + esc(t.name) + "</h2>" +
+        (t.summary ? '<p class="sw-summary">' + esc(t.summary) + "</p>" : "") +
+        (t.features && t.features.length ? '<ul class="checklist sw-features">' + t.features.map(function (f) { return "<li>" + esc(f) + "</li>"; }).join("") + "</ul>" : "") +
+        (facts.length ? '<dl class="sw-facts">' + facts.join("") + "</dl>" : "") +
+        (t.repo ? '<div class="link-row"><a class="btn btn-solid" href="' + esc(t.repo) + '" rel="noopener">View on GitHub</a>' +
+          '<a class="btn btn-outline" href="' + esc(t.repo) + '#installation" rel="noopener">Installation guide</a></div>' : "") +
+        "</div></article>";
+    }).join("");
   }
 
   /* ---------- Collaborations and summer school ---------- */
@@ -578,7 +632,9 @@
   renderMiniCurves();
   renderPeople();
   renderPublications();
+  renderPresentations();
   renderRecentPubs();
+  renderSoftware();
   renderCollaborations();
   renderAnnouncements();
   initContact();

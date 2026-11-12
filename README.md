@@ -1,6 +1,6 @@
-# Stellar and Exoplanet Astrophysics Research Group website
+# Star and Exoplanet Research Group (SERG) website
 
-Website of the Stellar and Exoplanet Astrophysics Research Group, Institute of Space Technology, Islamabad, led by Dr. Ahmed Waqas Zubairi.
+Website of the Star and Exoplanet Research Group (SERG), Institute of Space Technology, Islamabad, led by Dr. Ahmed Waqas Zubairi.
 
 It is a plain HTML, CSS and JavaScript site with no build step, hosted free on GitHub Pages. Almost everything members need to change lives in the `data/` folder, so nobody has to touch the page layouts to add a student or a paper.
 
@@ -9,7 +9,7 @@ It is a plain HTML, CSS and JavaScript site with no build step, hosted free on G
 ```
 index.html            Home
 research.html         Research areas
-people.html           PI, graduate, undergraduate, interns, alumni
+people.html           PI, research group members, alumni
 publications.html     Publication list with search
 collaborations.html   Partner institutions
 opportunities.html    Internships and supervision
@@ -29,8 +29,8 @@ assets/
 
 ## Publish on GitHub Pages
 
-1. Create a GitHub account (or an organisation for the group, e.g. `searg-ist`) at github.com.
-2. Create a new **public** repository. For the address `https://searg-ist.github.io/`, name the repository exactly `searg-ist.github.io`. Any other name gives an address like `https://searg-ist.github.io/website/`.
+1. Create a GitHub account (or an organisation for the group, e.g. `serg-ist`) at github.com.
+2. Create a new **public** repository. For the address `https://serg-ist.github.io/`, name the repository exactly `serg-ist.github.io`. Any other name gives an address like `https://serg-ist.github.io/website/`.
 3. Upload the contents of this folder (not the folder itself) with **Add file → Upload files**, then **Commit changes**. `index.html` must sit at the top level of the repository.
 4. Open **Settings → Pages**. Under *Build and deployment*, choose **Deploy from a branch**, select branch **main** and folder **/ (root)**, and save.
 5. After a minute or two the site address appears at the top of that Settings page.
@@ -54,7 +54,7 @@ All edits can be made in the browser: open the file on GitHub, click the pencil 
 ## Before going live: please check
 
 - **Spelling of the professor's name.** The site uses *Ahmed* Waqas Zubairi, matching his published papers and Google Scholar. If he prefers *Ahmad*, search and replace it in `data/people.js` and `contact.html`.
-- **Group name.** "Stellar and Exoplanet Astrophysics Research Group" is the working name; change `groupName` in `data/site.js` and the text in the `<title>` tags if he prefers another.
+- **Group name.** "Star and Exoplanet Research Group (SERG)" is the working name; change `groupName` in `data/site.js` and the text in the `<title>` tags if he prefers another.
 - **Professor's photo.** Upload as `assets/img/people/ahmed-waqas-zubairi.jpg`.
 - **Publications.** Four papers are included and were checked against NASA ADS, ScienceDirect and arXiv. Add the rest from Google Scholar.
 

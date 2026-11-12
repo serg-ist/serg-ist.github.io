@@ -4,7 +4,7 @@
   Keep the quotation marks and commas exactly as they are.
 */
 window.SITE = {
-  groupName: "Stellar and Exoplanet Astrophysics Research Group",
+  groupName: "Star and Exoplanet Research Group (SERG)",
   institute: "Institute of Space Technology",
   instituteShort: "IST",
   cityShort: "Islamabad",
