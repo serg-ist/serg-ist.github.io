@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stellar and Exoplanet Astrophysics Research Group</title>
+<meta name="description" content="Research group at the Institute of Space Technology, Islamabad, studying eclipsing binary stars, transiting exoplanets and stellar flares.">
+<meta property="og:title" content="Stellar and Exoplanet Astrophysics Research Group">
+<meta property="og:description" content="Research group at the Institute of Space Technology, Islamabad, studying eclipsing binary stars, transiting exoplanets and stellar flares.">
+<meta name="theme-color" content="#0d1a30">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:ital,wght@0,400;0,500;1,400&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="site-header"><div class="wrap header-inner"><a class="brand" href="index.html" style="color:#fff">Stellar and Exoplanet Astrophysics Research Group</a></div></header>
+<main id="main">
+<section class="hero sky">
+  <canvas class="stars" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <h1>Reading the light of stars</h1>
+    <p class="lede">We study eclipsing binary stars, transiting exoplanets and stellar flares through the way a star’s brightness changes over time: the light curves they leave in our data.</p>
+    <div class="actions">
+      <a class="btn btn-light" href="research.html">Explore our research</a>
+      <a class="btn btn-outline-light" href="people.html">Meet the group</a>
+    </div>
+    <figure class="hero-curve">
+      <div id="hero-curve" class="hero-curve-plot"></div>
+      <div class="curve-labels">
+        <a href="research.html#eclipsing-binaries">Eclipsing binaries</a>
+        <a href="research.html#transiting-exoplanets">Transiting exoplanets</a>
+        <a href="research.html#stellar-flares">Stellar flares</a>
+      </div>
+      <figcaption>An illustrative light curve. From left to right: two stars eclipsing each other, a planet crossing its star, and a sudden stellar flare. Real transits are far subtler; an Earth-sized planet dims a Sun-like star by less than 0.01%.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-intro">
+      <h2>What we study</h2>
+      <p>Based at the Institute of Space Technology, Islamabad, our group brings together researchers and students working in observational astrophysics. We use photometry from ground-based telescopes and space missions to measure the properties of stars and the planets around them.</p>
+    </div>
+    <div class="areas">
+      <article class="area">
+        <div class="mini-curve" data-curve="eclipse"></div>
+        <h3>Eclipsing binaries</h3>
+        <p>Pairs of stars whose orbits make them block each other’s light. Their eclipses reveal sizes, temperatures and how close binaries evolve.</p>
+        <a href="research.html#eclipsing-binaries">More on eclipsing binaries</a>
+      </article>
+      <article class="area">
+        <div class="mini-curve" data-curve="transit"></div>
+        <h3>Transiting exoplanets</h3>
+        <p>Planets that pass in front of their host star, causing a small, regular dip in brightness that tells us the planet’s size and orbit.</p>
+        <a href="research.html#transiting-exoplanets">More on transiting exoplanets</a>
+      </article>
+      <article class="area">
+        <div class="mini-curve" data-curve="flare"></div>
+        <h3>Stellar flares</h3>
+        <p>Sudden bursts of energy from magnetically active stars, especially cool red dwarfs, with consequences for any planets nearby.</p>
+        <a href="research.html#stellar-flares">More on stellar flares</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <h2 class="section-intro">Group lead</h2>
+    <div id="pi-summary"></div>
+    <div class="home-people" data-hide-empty>
+      <h3>Research group members</h3>
+      <ul class="people-grid" id="home-people"></ul>
+    </div>
+  </div>
+</section>
+
+<section class="section home-pubs">
+  <div class="wrap">
+    <div class="section-intro">
+      <h2>Recent publications</h2>
+    </div>
+    <ol class="pub-list" id="recent-pubs"></ol>
+    <div class="section-foot"><a class="btn btn-outline" href="publications.html">See all publications</a></div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap split">
+    <div>
+      <h2>Join the group</h2>
+      <p>We welcome BS, MS/MPhil and PhD students and research interns who want hands-on experience with real astronomical data.</p>
+      <a class="btn btn-solid" href="opportunities.html">Research opportunities</a>
+    </div>
+    <div>
+      <h2>Summer Research School</h2>
+      <p>We are planning a Summer Research School introducing students to observational astronomy, photometry and Python for astronomical data.</p>
+      <a class="btn btn-outline" href="summer-school.html">About the Summer Research School</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer" id="site-footer"></footer>
+<script src="data/site.js"></script>
+<script src="data/people.js"></script>
+<script src="data/publications.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
